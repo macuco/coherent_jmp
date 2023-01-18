@@ -7,34 +7,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-@Service
-public class ReservationService {
 
-    private ReservationRepository reservationRepository;
-    @Autowired
-    public ReservationService(ReservationRepository reservationRepository) {
-        this.reservationRepository = reservationRepository;
-    }
+public interface ReservationService {
 
-    public void createReservation(Reservation reservation) throws Exception {
-        if ( null == reservationRepository.addReservation(reservation) ) {
-            throw new Exception("The reservation exist, please update it");
-        }
-    }
+    Reservation createReservation(Reservation reservation) throws Exception;
 
-    public Collection<Reservation> readAllReservations() {
-        return this.reservationRepository.getAllReservation();
-    }
+    Collection<Reservation> readAllReservations();
 
-    public void updateReservationById(Integer id, Reservation reservation) throws Exception {
-        reservation.setId(id);
-        if ( !reservationRepository.updateReservation(id, reservation) ) {
-            throw new Exception("The reservation exist, please update it");
-        }
-    }
+    void updateReservationById(Integer id, Reservation reservation) throws Exception;
 
-    public Reservation findById(Integer id) throws Exception {
-        return reservationRepository.findById(id).orElseThrow( () -> new Exception("The reservation "+id+" doesn't exist"));
-    }
+    Reservation findById(Integer id) throws Exception;
 
 }

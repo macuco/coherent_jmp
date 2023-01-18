@@ -3,6 +3,7 @@ package com.coherent.reservations;
 import com.coherent.reservations.domain.Reservation;
 import com.coherent.reservations.repositories.ReservationRepository;
 import com.coherent.reservations.service.ReservationService;
+import com.coherent.reservations.service.ReservationServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,7 +13,7 @@ public class ReservationServiceTest {
     @Test
     public void createReservationTest () {
         ReservationRepository reservationRepository = new ReservationRepository();
-        ReservationService reservationService = new ReservationService(reservationRepository);
+        ReservationService reservationService = new ReservationServiceImpl(reservationRepository);
         Reservation reservation = new Reservation();
         reservation.setClientFullName("Juan");
         reservation.setRoomNumber(5);
@@ -27,7 +28,7 @@ public class ReservationServiceTest {
     @Test
     public void updateReservationById() {
         ReservationRepository reservationRepository = new ReservationRepository();
-        ReservationService reservationService = new ReservationService(reservationRepository);
+        ReservationService reservationService = new ReservationServiceImpl(reservationRepository);
         Reservation reservation = new Reservation();
         reservation.setClientFullName("Juan");
         reservation.setRoomNumber(5);
@@ -59,7 +60,7 @@ public class ReservationServiceTest {
     @Test
     public void readAllReservationsTest () {
         ReservationRepository reservationRepository = new ReservationRepository();
-        ReservationService reservationService = new ReservationService(reservationRepository);
+        ReservationService reservationService = new ReservationServiceImpl(reservationRepository);
 
         try {
             Reservation reservation = new Reservation();

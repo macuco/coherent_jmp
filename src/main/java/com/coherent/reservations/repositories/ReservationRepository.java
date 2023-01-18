@@ -3,13 +3,14 @@ package com.coherent.reservations.repositories;
 import com.coherent.reservations.domain.Reservation;
 import org.springframework.stereotype.Repository;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
 @Repository
-public class ReservationRepository {
+public class ReservationRepository implements Serializable {
 
     private Integer lastId;
     private Set<Reservation> collection;
