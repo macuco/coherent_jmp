@@ -9,7 +9,6 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-@Repository
 public class ReservationRepository implements Serializable {
 
     private Integer lastId;

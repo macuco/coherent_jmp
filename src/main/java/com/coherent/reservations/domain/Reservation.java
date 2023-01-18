@@ -3,13 +3,14 @@ package com.coherent.reservations.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
 @Data
 @NoArgsConstructor
-public class Reservation {
+public class Reservation implements Serializable {
     private Integer id;
     private String clientFullName;
     private Integer roomNumber;

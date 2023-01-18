@@ -1,6 +1,7 @@
 package com.coherent.reservations.service;
 
 import com.coherent.reservations.domain.Reservation;
+import com.coherent.reservations.exception.ServiceException;
 import com.coherent.reservations.repositories.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,9 @@ public class ReservationServiceImpl implements ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public Reservation createReservation(Reservation reservation) throws Exception {
+    public Reservation createReservation(Reservation reservation) {
         if ( null == reservationRepository.addReservation(reservation) ) {
-            throw new Exception("The reservation exist, please update it");
+            throw new ServiceException("The reservation exist, please update it");
         }
         return reservation;
     }
@@ -26,14 +27,14 @@ public class ReservationServiceImpl implements ReservationService {
         return this.reservationRepository.getAllReservation();
     }
 
-    public void updateReservationById(Integer id, Reservation reservation) throws Exception {
+    public void updateReservationById(Integer id, Reservation reservation) {
         reservation.setId(id);
         if ( !reservationRepository.updateReservation(id, reservation) ) {
-            throw new Exception("The reservation exist, please update it");
+            throw new ServiceException("The reservation "+id+" doesn't exist");
         }
     }
 
-    public Reservation findById(Integer id) throws Exception {
-        return reservationRepository.findById(id).orElseThrow( () -> new Exception("The reservation "+id+" doesn't exist"));
+    public Reservation findById(Integer id) {
+        return reservationRepository.findById(id).orElseThrow( () -> new ServiceException("The reservation "+id+" doesn't exist"));
     }
 }

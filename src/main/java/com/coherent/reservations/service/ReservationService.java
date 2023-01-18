@@ -10,12 +10,12 @@ import java.util.Collection;
 
 public interface ReservationService {
 
-    Reservation createReservation(Reservation reservation) throws Exception;
+    Reservation createReservation(Reservation reservation);
 
     Collection<Reservation> readAllReservations();
 
-    void updateReservationById(Integer id, Reservation reservation) throws Exception;
+    void updateReservationById(Integer id, Reservation reservation);
 
-    Reservation findById(Integer id) throws Exception;
+    Reservation findById(Integer id);
 
 }

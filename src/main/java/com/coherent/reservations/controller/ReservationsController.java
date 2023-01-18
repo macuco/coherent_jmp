@@ -15,8 +15,8 @@ public class ReservationsController {
     @Autowired
     private ReservationService reservationService;
 
-    @PostMapping("/")
-    public Reservation create(@RequestBody Reservation reservation) throws Exception {
+    @PostMapping
+    public Reservation create(@RequestBody Reservation reservation) {
         return reservationService.createReservation(reservation);
     }
 
@@ -26,12 +26,12 @@ public class ReservationsController {
     }
 
     @GetMapping("/{id}")
-    public Reservation findById(@PathParam("id") Integer id) throws Exception {
+    public Reservation findById(@PathVariable("id") Integer id) {
         return reservationService.findById(id);
     }
 
     @PutMapping("/{id}")
-    public void update(@RequestBody Reservation reservation, @PathParam("id") Integer id) throws Exception {
+    public void update(@RequestBody Reservation reservation, @PathVariable("id") Integer id) {
         reservationService.updateReservationById(id, reservation);
     }
 }
