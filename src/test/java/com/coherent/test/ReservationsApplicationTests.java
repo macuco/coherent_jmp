@@ -8,7 +8,6 @@ class ReservationsApplicationTests {
 
 	@Test
 	void contextLoads() {
-		if(true == true);
 	}
 
 }
