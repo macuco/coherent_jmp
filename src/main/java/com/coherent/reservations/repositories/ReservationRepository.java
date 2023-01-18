@@ -1,6 +1,6 @@
-package com.coherent.test.repositories;
+package com.coherent.reservations.repositories;
 
-import com.coherent.test.domain.Reservation;
+import com.coherent.reservations.domain.Reservation;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package com.coherent.test;
+package com.coherent.reservations;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

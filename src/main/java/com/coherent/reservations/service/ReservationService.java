@@ -1,7 +1,7 @@
-package com.coherent.test.service;
+package com.coherent.reservations.service;
 
-import com.coherent.test.domain.Reservation;
-import com.coherent.test.repositories.ReservationRepository;
+import com.coherent.reservations.domain.Reservation;
+import com.coherent.reservations.repositories.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

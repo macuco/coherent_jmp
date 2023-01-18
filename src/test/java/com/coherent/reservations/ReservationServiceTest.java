@@ -1,8 +1,8 @@
-package com.coherent.test;
+package com.coherent.reservations;
 
-import com.coherent.test.domain.Reservation;
-import com.coherent.test.repositories.ReservationRepository;
-import com.coherent.test.service.ReservationService;
+import com.coherent.reservations.domain.Reservation;
+import com.coherent.reservations.repositories.ReservationRepository;
+import com.coherent.reservations.service.ReservationService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,4 +1,4 @@
-package com.coherent.test;
+package com.coherent.reservations;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

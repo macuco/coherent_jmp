@@ -1,4 +1,4 @@
-package com.coherent.test.domain;
+package com.coherent.reservations.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
